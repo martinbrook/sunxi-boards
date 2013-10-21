@@ -292,17 +292,17 @@ good_block_ratio = 0
 [disp_init]
 disp_init_enable = 1
 disp_mode = 0
-screen0_output_type = 1
+screen0_output_type = 3
 screen0_output_mode = 4
-screen1_output_type = 1
+screen1_output_type = 0
 screen1_output_mode = 4
 fb0_framebuffer_num = 2
 fb0_format = 10
-fb0_pixel_sequence = 0
+fb0_pixel_sequence = 2
 fb0_scaler_mode_enable = 0
 fb1_framebuffer_num = 2
 fb1_format = 10
-fb1_pixel_sequence = 0
+fb1_pixel_sequence = 2
 fb1_scaler_mode_enable = 0
 lcd0_backlight = 197
 lcd1_backlight = 197
@@ -316,42 +316,44 @@ lcd1_saturation = 57
 lcd1_hue = 50
 
 [lcd0_para]
-lcd_used = 1
-lcd_x = 800
-lcd_y = 480
-lcd_dclk_freq = 33
-lcd_pwm_not_used = 0
+lcd_used = 0
+lcd_x = 1024
+lcd_y = 600
+lcd_dclk_freq = 46
+lcd_pwm_not_used = 1
 lcd_pwm_ch = 0
 lcd_pwm_freq = 10000
-lcd_pwm_pol = 1
+lcd_pwm_pol = 0
 lcd_if = 0
-lcd_hbp = 46
-lcd_ht = 1055
+lcd_hbp = 160
+lcd_ht = 1229
 lcd_vbp = 23
-lcd_vt = 1050
-lcd_vspw = 0
-lcd_hspw = 0
+lcd_vt = 1246
+lcd_hv_vspw = 0
+lcd_hv_hspw = 0
 lcd_hv_if = 0
 lcd_hv_smode = 0
 lcd_hv_s888_if = 0
 lcd_hv_syuv_if = 0
+lcd_hv_lde_used = 0
+lcd_hv_lde_iovalue = 0
 lcd_lvds_ch = 0
 lcd_lvds_mode = 0
 lcd_lvds_bitwidth = 0
 lcd_lvds_io_cross = 0
 lcd_cpu_if = 0
 lcd_frm = 0
-lcd_io_cfg0 = 268435456
+lcd_io_cfg0 = 0
 lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
-lcd_bl_en_used = 1
-lcd_bl_en = port:PH07<1><0><default><1>
-lcd_power_used = 1
-lcd_power = port:PH08<1><0><default><1>
-lcd_pwm_used = 1
-lcd_pwm = port:PB02<2><0><default><default>
+lcd_bl_en_used = 0
+lcd_bl_en =
+lcd_power_used = 0
+lcd_power =
+lcd_pwm_used = 0
+lcd_pwm =
 lcdd0 = port:PD00<2><0><default><default>
 lcdd1 = port:PD01<2><0><default><default>
 lcdd2 = port:PD02<2><0><default><default>
@@ -416,8 +418,8 @@ lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
 lcd_power =
-lcd_pwm_used = 1
-lcd_pwm = port:PI03<2><0><default><default>
+lcd_pwm_used = 0
+lcd_pwm =
 lcd_gpio_0 =
 lcd_gpio_1 =
 lcd_gpio_2 =
@@ -452,7 +454,7 @@ lcdhsync = port:PH26<2><0><default><default>
 lcdvsync = port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 4
 dac1_src = 5
 dac2_src = 6
@@ -485,7 +487,7 @@ ov5650_mv9335 = 0
 siv121d = 0
 
 [csi0_para]
-csi_used = 1
+csi_used = 0
 csi_dev_qty = 1
 csi_stby_mode = 0
 csi_mname = "mt9p111"
@@ -572,7 +574,7 @@ csi_power_en = port:PH16<1><default><default><0>
 csi_stby = port:PH19<1><default><default><0>
 
 [tvout_para]
-tvout_used = 1
+tvout_used = 0
 tvout_channel_num = 1
 
 [tvin_para]
@@ -584,7 +586,7 @@ sata_used = 1
 sata_power_en =
 
 [mmc0_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 sdc_buswidth = 4
 sdc_clk = port:PF02<2><1><2><default>
@@ -593,14 +595,14 @@ sdc_d0 = port:PF01<2><1><2><default>
 sdc_d1 = port:PF00<2><1><2><default>
 sdc_d2 = port:PF05<2><1><2><default>
 sdc_d3 = port:PF04<2><1><2><default>
-sdc_det = port:PH01<0><1><default><default>
+sdc_det =
 sdc_use_wp = 0
 sdc_wp =
 sdc_isio = 0
 sdc_regulator = "none"
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 sdc_buswidth = 4
 sdc_clk = port:PG00<2><1><2><default>
@@ -633,7 +635,7 @@ sdc_regulator = "none"
 
 [mmc3_para]
 sdc_used = 1
-sdc_detmode = 4
+sdc_detmode = 1
 sdc_buswidth = 4
 sdc_cmd = port:PI04<2><1><2><default>
 sdc_clk = port:PI05<2><1><2><default>
@@ -641,7 +643,7 @@ sdc_d0 = port:PI06<2><1><2><default>
 sdc_d1 = port:PI07<2><1><2><default>
 sdc_d2 = port:PI08<2><1><2><default>
 sdc_d3 = port:PI09<2><1><2><default>
-sdc_det =
+sdc_det = port:PH11<0><1><default><default>
 sdc_use_wp = 0
 sdc_wp =
 sdc_isio = 1
@@ -708,14 +710,9 @@ usb_used = 1
 usb_port_type = 2
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
-usb_det_vbus_gpio = "axp_ctrl"
+usb_det_vbus_gpio = port:PH05<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_ac_enable_gpio = port:PH05<1><0><default><0>
-usb_restrict_gpio = 0
-usb_host_init_state = 0
-usb_restric_flag = 0
-usb_restric_voltage = 3550000
-usb_restric_capacity = 5
+usb_host_init_state = 1
 
 [usbc1]
 usb_used = 1
@@ -732,7 +729,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
 usb_restrict_gpio =
-usb_host_init_state = 0
+usb_host_init_state = 1
 usb_restric_flag = 0
 
 [usb_feature]
@@ -832,7 +829,7 @@ spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
 
 [audio_para]
-audio_used = 1
+audio_used = 0
 audio_pa_ctrl = port:PH15<1><default><default><0>
 
 [switch_para]
@@ -924,3 +921,25 @@ LV6_freq = 312000000
 LV6_volt = 1000
 LV7_freq = 144000000
 LV7_volt = 1000
+
+[gpio_para]
+gpio_used = 1
+gpio_num = 8
+gpio_pin_1 = port:PB02<0><default><default><default>
+gpio_pin_2 = port:PI03<0><default><default><default>
+gpio_pin_3 = port:PF00<0><default><default><default>
+gpio_pin_4 = port:PF01<0><default><default><default>
+gpio_pin_5 = port:PF02<0><default><default><default>
+gpio_pin_6 = port:PF03<0><default><default><default>
+gpio_pin_7 = port:PF04<0><default><default><default>
+gpio_pin_8 = port:PF05<0><default><default><default>
+
+[gpio_init]
+pin_1 = port:PB02<0><default><default><default>
+pin_2 = port:PI03<0><default><default><default>
+pin_3 = port:PF00<0><default><default><default>
+pin_4 = port:PF01<0><default><default><default>
+pin_5 = port:PF02<0><default><default><default>
+pin_6 = port:PF03<0><default><default><default>
+pin_7 = port:PF04<0><default><default><default>
+pin_8 = port:PF05<0><default><default><default>
